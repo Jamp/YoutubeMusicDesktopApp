@@ -137,25 +137,45 @@ mainWindow.loadURL('https://music.youtube.com');
 - Windows
 - Linux
 
-## Releases
+## Build y Releases
 
-Este proyecto usa GitHub Actions para crear releases automáticos multiplataforma.
+### Compilar localmente
 
-### Crear un nuevo release:
+Para compilar la aplicación en tu sistema:
 
-1. Actualiza la versión en `package.json`
-2. Crea un tag con la versión:
+```bash
+# macOS
+npm run build:mac
+# Los archivos estarán en dist/
+
+# Windows
+npm run build:win
+
+# Linux
+npm run build:linux
+```
+
+Los archivos compilados se generarán en la carpeta `dist/`:
+- **macOS**: `.dmg` y `.zip` (para Intel y Apple Silicon)
+- **Windows**: `.exe` (instalador NSIS) y `-portable.exe`
+- **Linux**: `.AppImage`, `.deb`, y `.rpm`
+
+### Crear un release en GitHub
+
+1. **Compila localmente** los archivos para tu plataforma
+2. **Actualiza la versión** en `package.json`
+3. **Crea un tag** y súbelo a GitHub:
    ```bash
    git tag v1.0.0
    git push origin v1.0.0
    ```
-3. GitHub Actions automáticamente:
-   - Construirá la app para macOS (DMG + ZIP, x64 + ARM64)
-   - Construirá la app para Windows (NSIS + Portable, x64 + ia32)
-   - Construirá la app para Linux (AppImage + DEB + RPM, x64 + ARM64)
-   - Creará un release en GitHub con todos los binarios
+4. **Ve a GitHub** y [crea un nuevo release](https://github.com/TU_USUARIO/youtube-music-desktop/releases/new)
+5. **Arrastra los archivos** de `dist/` al release
+6. **Publica el release**
 
-### Descargar releases:
+> **Nota**: El workflow de GitHub Actions creará automáticamente el release cuando hagas push del tag, pero necesitarás subir los binarios manualmente desde tu computadora.
+
+### Descargar releases
 
 Los releases están disponibles en la [página de releases](https://github.com/TU_USUARIO/youtube-music-desktop/releases).
 
