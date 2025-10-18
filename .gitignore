@@ -17,6 +17,7 @@ yarn.lock
 *.exe
 *.deb
 *.rpm
+*.AppImage
 
 # IDE
 .vscode/

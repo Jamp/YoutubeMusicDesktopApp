@@ -141,24 +141,40 @@ mainWindow.loadURL('https://music.youtube.com');
 
 ### Compilar localmente
 
-Para compilar la aplicación en tu sistema:
+#### macOS
+```bash
+npm run build:mac
+```
+Genera: `.dmg` y `.zip` (Intel x64 y Apple Silicon ARM64)
+
+#### Windows
+```bash
+npm run build:win
+```
+Genera: `.exe` (instalador NSIS) y `-portable.exe` (x64 y ia32)
+
+#### Linux (usando Docker)
+
+Para compilar para Linux desde macOS/Windows, usa Docker:
 
 ```bash
-# macOS
-npm run build:mac
-# Los archivos estarán en dist/
+# Compilar para x64 solamente
+./build-linux.sh x64
 
-# Windows
-npm run build:win
+# Compilar para ARM64 solamente (Raspberry Pi, etc.)
+./build-linux.sh arm64
 
-# Linux
-npm run build:linux
+# Compilar para ambas arquitecturas
+./build-linux.sh all
 ```
 
-Los archivos compilados se generarán en la carpeta `dist/`:
-- **macOS**: `.dmg` y `.zip` (para Intel y Apple Silicon)
-- **Windows**: `.exe` (instalador NSIS) y `-portable.exe`
-- **Linux**: `.AppImage`, `.deb`, y `.rpm`
+**Requisitos:**
+- Docker Desktop instalado y corriendo
+- Soporte para multi-arquitectura habilitado en Docker
+
+Genera: `.AppImage` y `.deb` (x64 y ARM64)
+
+> **Nota**: Docker compila en contenedores Linux nativos, por lo que funciona perfectamente desde macOS o Windows.
 
 ### Crear un release en GitHub
 

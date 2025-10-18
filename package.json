@@ -7,7 +7,7 @@
   "scripts": {
     "start": "electron .",
     "dev": "electron . --dev",
-    "build": "electron-builder",
+    "build": "pnpm build:linux && pnpm build:mac && pnpm build:win",
     "build:mac": "electron-builder --mac",
     "build:win": "electron-builder --win",
     "build:linux": "electron-builder --linux"
@@ -18,7 +18,15 @@
     "desktop",
     "system-tray"
   ],
-  "author": "",
+  "author": {
+    "name": "Jaro Marval",
+    "email": "jampgold@gmail.com"
+  },
+  "homepage": "https://github.com/jampgold/youtube-music-desktop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jampgold/youtube-music-desktop.git"
+  },
   "license": "MIT",
   "build": {
     "appId": "com.youtubemusic.desktop",
@@ -66,12 +74,9 @@
         {
           "target": "deb",
           "arch": ["x64", "arm64"]
-        },
-        {
-          "target": "rpm",
-          "arch": ["x64", "arm64"]
         }
-      ]
+      ],
+      "maintainer": "Jaro Marval <jampgold@gmail.com>"
     },
     "publish": {
       "provider": "github",
