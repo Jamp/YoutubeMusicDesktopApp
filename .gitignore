@@ -1,0 +1,27 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+
+.claude
+
+# Package managers
+package-lock.json
+pnpm-lock.yaml
+.pnpm-debug.log*
+yarn.lock
+
+# Build artifacts
+*.dmg
+*.zip
+*.exe
+*.deb
+*.rpm
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+.npmrc
+.pnpmfile.cjs
