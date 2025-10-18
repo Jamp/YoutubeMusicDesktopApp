@@ -137,6 +137,28 @@ mainWindow.loadURL('https://music.youtube.com');
 - Windows
 - Linux
 
+## Releases
+
+Este proyecto usa GitHub Actions para crear releases automáticos multiplataforma.
+
+### Crear un nuevo release:
+
+1. Actualiza la versión en `package.json`
+2. Crea un tag con la versión:
+   ```bash
+   git tag v1.0.0
+   git push origin v1.0.0
+   ```
+3. GitHub Actions automáticamente:
+   - Construirá la app para macOS (DMG + ZIP, x64 + ARM64)
+   - Construirá la app para Windows (NSIS + Portable, x64 + ia32)
+   - Construirá la app para Linux (AppImage + DEB + RPM, x64 + ARM64)
+   - Creará un release en GitHub con todos los binarios
+
+### Descargar releases:
+
+Los releases están disponibles en la [página de releases](https://github.com/TU_USUARIO/youtube-music-desktop/releases).
+
 ## Licencia
 
 MIT
