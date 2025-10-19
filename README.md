@@ -28,7 +28,7 @@ Aplicación de escritorio para YouTube Music con soporte para system tray.
 pnpm install
 ```
 
-> Este proyecto usa **pnpm** en lugar de npm por ser más rápido y eficiente con el espacio en disco.
+> **Nota**: Este proyecto usa **pnpm** en lugar de npm por ser más rápido y eficiente. Los builds de Docker también usan pnpm para mayor velocidad. También puedes usar `npm install` si prefieres.
 
 ## Uso
 
